@@ -31,3 +31,24 @@ body {
     text-wrap: balance;
   }
 }
+
+.flasherr-box {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+}
+
+.flasherr-red {
+  background-color: red;
+}
+
+.flasherr-green {
+  background-color: green;
+}
+
+.flasherr-blue {
+  background-color: blue;
+}
