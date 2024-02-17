@@ -1,25 +1,14 @@
-'use client';
-
-import { useEffect, useState } from 'react';
 import PocketBase from 'pocketbase';
-import { Tile, TypedPocketBase } from '../db';
-import TileBox from '../tile-box';
+import { Tile, TypedPocketBase } from '../../db';
+import { TileComponentRealtime } from './tile';
 
 
-export default function Tile({ params: { id } }: { params: { id: string } }) {
-    const [tileColour, setTileColour] = useState('');
+export default async function Tile({ params: { id } }: { params: { id: string } }) {
+    const pb = new PocketBase(process.env.pocketbaseBaseURL) as TypedPocketBase;
 
-    useEffect(() => {
-        const pb = new PocketBase(process.env.pocketbaseBaseURL) as TypedPocketBase;
-
-        if (tileColour === '') {
-            pb.collection('tiles').getOne(id).then(record => { setTileColour(record.colour)});
-        }
-
-        pb.collection('tiles').subscribe(id, response => { setTileColour(response.record.colour) });
-    });
+    const tileObj = await pb.collection('tiles').getOne(id);
 
     return (
-        <TileBox colour={tileColour}></TileBox>
+        <TileComponentRealtime id={id} colour={tileObj.colour}></TileComponentRealtime>
     )
 }
