@@ -32,53 +32,58 @@ body {
   }
 }
 
+.flasherr-area {
+  height: 500px;
+  width: 500px;
+  border: white;
+  display: block;
+  margin-left: 33%;
+}
+
 .flasherr-tile {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-}
-
-.flasherr-tile-small {
-  height: 100px;
-  width: 100px;
+  height: 50px;
+  width: 50px;
   float: left;
-  margin: 10px;
+  margin: 2px;
 }
 
-.flasherr-tile-small p {
+.flasherr-tile p {
   text-align: center;
   padding-top: 25px;
 }
 
-.flasherr-red {
+.flasherr-0 {
+  background-color: white;
+  color: black;
+}
+
+.flasherr-1 {
   background-color: red;
   color: black;
 }
 
-.flasherr-green {
+.flasherr-2 {
   background-color: green;
   color: black;
 }
 
-.flasherr-blue {
+.flasherr-3 {
   background-color: blue;
   color: black;
 }
 
-.flasherr-yellow {
-  background-color: yellow;
-  color: black;
-}
-
-.flasherr-pink {
+.flasherr-4 {
   background-color: pink;
   color: black;
 }
 
-.flasherr-cyan {
+.flasherr-5 {
+  background-color: yellow;
+  color: black;
+}
+
+
+.flasherr-6 {
   background-color: cyan;
   color: black;
 }

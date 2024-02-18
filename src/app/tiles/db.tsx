@@ -1,8 +1,8 @@
 import PocketBase, { RecordService } from 'pocketbase';
 
 interface Tile {
-    id:     string;
-    colour: string;
+    id:     string
+    colour: number
 }
 
 interface TypedPocketBase extends PocketBase {

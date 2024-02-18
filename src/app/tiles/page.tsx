@@ -1,20 +1,9 @@
-import { getTiles } from './db';
-import { TileComponentSmall } from './tile';
+'use client';
 
-export default async function Tiles() {
-    const tiles = await getTiles();
+import { TilesComponentRealtime } from './components/client-components';
 
+export default function Tiles() {
     return (
-        <div>
-            <ul>
-                {
-                    tiles.items.map((tile) => (
-                        <li key={tile.id}>
-                            <TileComponentSmall id={tile.id} colour={tile.colour}></TileComponentSmall>
-                        </li>
-                    ))
-                }
-            </ul>
-        </div>
+        <TilesComponentRealtime></TilesComponentRealtime>
     )
 }

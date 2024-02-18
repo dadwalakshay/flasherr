@@ -1,13 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "./header";
-
-const inter = Inter({ subsets: ["latin"] });
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "flasherr",
-  description: "Let's flash is together!",
+  description: "Let's flash it together!",
 };
 
 export default function RootLayout({
@@ -17,9 +15,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className='grid'>
         <Header></Header>
-        {children}
+          {children}
       </body>
     </html>
   );
