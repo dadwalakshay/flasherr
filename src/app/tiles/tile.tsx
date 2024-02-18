@@ -8,11 +8,13 @@ function TileComponent({ id, colour }: { id: string, colour: string }) {
   );
 }
 
-function TileComponentSmall({ id, colour }: { id: string, colour: string }) { 
+function TileComponentSmall({ id, colour }: { id: string, colour: string }) {
   return (
-    <div className={`flasherr-tile-small flasherr-${colour}`}>
-      <Link href={`/tiles/${id}`}>I am Small Tile!</Link>
-    </div>
+      <Link href={`/tiles/${id}`}>
+        <div className={`flasherr-tile-small flasherr-${colour}`}>
+          <p>I am a small Tile!</p>
+        </div>
+      </Link>
   );
 }
 

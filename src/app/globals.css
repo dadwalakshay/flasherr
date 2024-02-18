@@ -44,18 +44,43 @@ body {
 .flasherr-tile-small {
   height: 100px;
   width: 100px;
+  float: left;
+  margin: 10px;
+}
+
+.flasherr-tile-small p {
+  text-align: center;
+  padding-top: 25px;
 }
 
 .flasherr-red {
   background-color: red;
+  color: black;
 }
 
 .flasherr-green {
   background-color: green;
+  color: black;
 }
 
 .flasherr-blue {
   background-color: blue;
+  color: black;
+}
+
+.flasherr-yellow {
+  background-color: yellow;
+  color: black;
+}
+
+.flasherr-pink {
+  background-color: pink;
+  color: black;
+}
+
+.flasherr-cyan {
+  background-color: cyan;
+  color: black;
 }
 
 .random-button {

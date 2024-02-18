@@ -1,13 +1,10 @@
-import PocketBase from 'pocketbase';
-import { Tile, TypedPocketBase } from '../db';
+import { getTile } from '../db';
 import { TileComponent } from '../tile';
 
 export default async function Tile({ params: { id } }: { params: { id: string } }) {
-    const pb = new PocketBase(process.env.pocketbaseBaseURL) as TypedPocketBase;
-
-    const tileObj = await pb.collection('tiles').getOne(id);
+    const tile = await getTile(id);
 
     return (
-        <TileComponent id={id} colour={tileObj.colour}></TileComponent>
+        <TileComponent id={id} colour={tile.colour}></TileComponent>
     );
 }
