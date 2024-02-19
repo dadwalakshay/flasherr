@@ -1,9 +1,9 @@
 'use client';
 
-import { TilesComponentRealtime } from './components/client-components';
+import { TilesWithListenerComponent } from './components/client-components';
 
 export default function Tiles() {
     return (
-        <TilesComponentRealtime></TilesComponentRealtime>
+        <TilesWithListenerComponent></TilesWithListenerComponent>
     )
 }

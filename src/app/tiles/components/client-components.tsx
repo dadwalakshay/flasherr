@@ -1,28 +1,11 @@
 'use client';
 
-import { useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { Tile, getPocketbaseClient } from "../db";
 
-function TilesComponentRealtime() {
+
+function TilesWithListenerComponent() {
     const [tiles, setTiles] = useState(Array<Tile>);
-
-    useEffect(() => {
-        const pb = getPocketbaseClient();
-
-        pb.collection('tiles').getFullList().then((records) => setTiles(records));
-
-        pb.collection('tiles').subscribe('*', (response) => {
-            const tileRecord: Tile = response.record;
-
-            tiles.forEach((tile) => {
-                if (tile.id === tileRecord.id) {
-                    tile.colour = tileRecord.colour;
-
-                    setTiles(tiles);
-                }
-            })
-        })
-    }, [])
 
     return (
         <ul>
@@ -31,8 +14,27 @@ function TilesComponentRealtime() {
                     <div className={`flasherr-tile flasherr-${tile.colour}`} key={tile.id}></div>
                 ))
             }
+
+            <TilesComponent setTiles={setTiles} tiles={tiles}></TilesComponent>
         </ul>
+
     );
 }
 
-export { TilesComponentRealtime }
+function TilesComponent({ tiles, setTiles }: { tiles: Array<Tile>, setTiles: Dispatch<SetStateAction<Tile[]>> }) {
+    useEffect(() => {
+        const pb = getPocketbaseClient();
+
+        if(tiles.length == 0) {
+            pb.collection('tiles').getFullList().then((records) => setTiles(records));
+        }
+
+        pb.collection('tiles').subscribe('*', (response) => {
+            pb.collection('tiles').getFullList().then((records) => setTiles(records));
+        })
+    }, [])
+
+    return (<p className='hidden'>hidden listener...</p>)
+}
+
+export { TilesWithListenerComponent }
