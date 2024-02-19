@@ -4,7 +4,7 @@ import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { Tile, getPocketbaseClient } from "../db";
 
 
-function TilesWithListenerComponent() {
+function TilesComponent() {
     const [tiles, setTiles] = useState(Array<Tile>);
 
     return (
@@ -15,13 +15,13 @@ function TilesWithListenerComponent() {
                 ))
             }
 
-            <TilesComponent setTiles={setTiles} tiles={tiles}></TilesComponent>
+            <TilesListenerComponent setTiles={setTiles} tiles={tiles}></TilesListenerComponent>
         </ul>
 
     );
 }
 
-function TilesComponent({ tiles, setTiles }: { tiles: Array<Tile>, setTiles: Dispatch<SetStateAction<Tile[]>> }) {
+function TilesListenerComponent({ tiles, setTiles }: { tiles: Array<Tile>, setTiles: Dispatch<SetStateAction<Tile[]>> }) {
     useEffect(() => {
         const pb = getPocketbaseClient();
 
@@ -37,4 +37,4 @@ function TilesComponent({ tiles, setTiles }: { tiles: Array<Tile>, setTiles: Dis
     return (<p className='hidden'>hidden listener...</p>)
 }
 
-export { TilesWithListenerComponent }
+export { TilesComponent }
