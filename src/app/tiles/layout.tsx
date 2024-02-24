@@ -4,7 +4,7 @@ export default function TilesLayout({
     children: React.ReactNode;
   }>) {
     return (
-        <div className="flasherr-area">
+        <div className="md">
             {children}
         </div>
     );
