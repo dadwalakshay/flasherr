@@ -42,7 +42,7 @@ async function getTile(id: string) {
     return tile
 }
 
-async function updateTile(id: string, colour: string) {
+async function updateTile(id: string, colour: number) {
     const pb = getPocketbaseClient();
 
     const tile = await pb.collection('tiles').update(id, {'colour': colour});

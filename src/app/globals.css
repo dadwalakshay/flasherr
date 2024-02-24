@@ -33,11 +33,8 @@ body {
 }
 
 .flasherr-area {
-  height: 500px;
-  width: 500px;
   border: white;
   display: block;
-  margin-left: 33%;
 }
 
 .flasherr-tile {
@@ -54,38 +51,31 @@ body {
 
 .flasherr-0 {
   background-color: white;
-  color: black;
 }
 
 .flasherr-1 {
   background-color: red;
-  color: black;
 }
 
 .flasherr-2 {
   background-color: green;
-  color: black;
 }
 
 .flasherr-3 {
   background-color: blue;
-  color: black;
 }
 
 .flasherr-4 {
   background-color: pink;
-  color: black;
 }
 
 .flasherr-5 {
   background-color: yellow;
-  color: black;
 }
 
 
 .flasherr-6 {
   background-color: cyan;
-  color: black;
 }
 
 .random-button {

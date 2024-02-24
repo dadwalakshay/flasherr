@@ -1,5 +1,3 @@
-import { Suspense } from "react";
-
 export default function TilesLayout({
     children,
   }: Readonly<{
@@ -7,9 +5,7 @@ export default function TilesLayout({
   }>) {
     return (
         <div className="flasherr-area">
-          <Suspense>
             {children}
-          </Suspense>
         </div>
     );
   }
